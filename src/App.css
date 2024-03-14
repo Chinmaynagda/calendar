@@ -1,0 +1,22 @@
+.rowHead {
+  background-color: whitesmoke;
+}
+
+.headCell {
+  font-size: medium !important;
+  font-weight: bold !important;
+}
+
+.tableCell {
+  width: 7vw;
+  height: 5vh;
+  border-right: 1px solid lightgray;
+}
+
+.orgBtn {
+  background-color: orange !important;
+}
+
+.orgBtn :hover {
+ background-color: orange !important;
+}
