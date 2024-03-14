@@ -24,7 +24,12 @@ function formatTime(time:string){
 
 function getValuesByDate(targetDate: Date,todos:Array<todoType>) {
     const values:Array<todoType> = []; 
-    const dateStr = targetDate.toDateString();
+    const dateStr = targetDate.toLocaleDateString('en-US',{
+        year: 'numeric',
+        month: 'numeric', 
+        day: 'numeric' 
+}
+);
     todos.forEach((todo)=>{
         if(todo.date === dateStr) values.push(todo)
     }
@@ -96,7 +101,7 @@ function retText(hr: number,values:Array<todoType>) {
     values.forEach((item) => {
     const st = parseInt(item.startTime.split(':')[0]);
     const et = parseInt(item.endTime.split(':')[0]);
-        if (hr===Math.round((st+et)/2)) {
+        if (hr===Math.floor((st+et)/2)) {
             txt = item.title;
             return txt;
         }

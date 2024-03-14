@@ -27,6 +27,7 @@ const MonthTable:React.FC<monthData> = (props) => {
 
     const handleClose = () => {
       setOpen(false);
+      setModelData(null);
     }
    
 
@@ -34,11 +35,13 @@ const MonthTable:React.FC<monthData> = (props) => {
     const handleTaskOpen = () =>{
       setTaskModelOpen(true);
     } 
-    const handleTaskClose = () => setTaskModelOpen(false);
+    const handleTaskClose = () => {
+      handleClose();
+      setTaskModelOpen(false);
+    }
     const [editID,setEditID] = useState<string|null>(null);
  
     function onEditTask(st: string|null) {
-      handleClose();
       handleTaskOpen();
   }
 

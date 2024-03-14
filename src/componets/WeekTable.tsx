@@ -22,7 +22,11 @@ for (let i = 0; i <= 23; i++) {
 
 const WeekColumn: React.FC<{ w_dt: Date }> = ({ w_dt }) => {
   const values: Array<todoType> = useSelector((state: stateType) => state.todos);
-  const dayValues = values.filter((todo) => todo.date === w_dt.toDateString());
+  const dayValues = values.filter((todo) => todo.date === w_dt.toLocaleDateString('en-US',{
+    year: 'numeric',
+    month: 'numeric', 
+    day: 'numeric' 
+}));
   return (
     <Box sx={{
       display: 'flex', flexDirection: 'column', justifyContent: 'space-between',

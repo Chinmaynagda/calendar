@@ -12,6 +12,12 @@ export type todoType ={
     description: string
 }
 
+export const dateOptions={
+        year: 'numeric',
+        month: 'numeric', 
+        day: 'numeric' 
+}
+
 
 
 type LS_obj = {
